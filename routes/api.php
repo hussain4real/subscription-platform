@@ -21,11 +21,11 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route for getting all posts
-Route::get('/posts', [PostController::class,'index']);
-
-// Route for getting all subscriptions
-Route::get('/subscriptions', [SubscriptionController::class,'index']);
+//// Route for getting all posts
+//Route::get('/posts', [PostController::class,'index']);
+//
+//// Route for getting all subscriptions
+//Route::get('/subscriptions', [SubscriptionController::class,'index']);
 //route for creating a post for a website
 Route::post('/websites/{websiteId}/posts', [WebsiteController::class,'createPost']);
 

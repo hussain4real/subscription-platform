@@ -10,16 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SubscriptionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //get all subscriptions
-        $subscriptions = Subscription::all();
-        //return a json response
-        return response()->json($subscriptions);
-    }
+
 
 
 
