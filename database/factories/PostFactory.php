@@ -19,7 +19,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->title,
-            'description' => $this->faker->paragraph,
+            'description' => $this->faker->text,
             'website_id' => Website::factory()->create()->id,
         ];
     }

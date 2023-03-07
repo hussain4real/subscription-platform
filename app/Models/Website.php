@@ -9,10 +9,18 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Website extends Model
 {
     use HasFactory;
+    //guarded
+    protected $guarded = [];
 
     //Relationships with Post model
     public function posts():HasMany
     {
         return $this->hasMany(Post::class);
+    }
+
+    //Relationships with Subscription model
+    public function subscriptions():HasMany
+    {
+        return $this->hasMany(Subscription::class);
     }
 }

@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Subscription extends Model
 {
     use HasFactory;
+    //guarded
+    protected $guarded = [];
 
     // Relationships with User model
     public function user():BelongsTo
@@ -20,5 +22,11 @@ class Subscription extends Model
     public function website():BelongsTo
     {
         return $this->belongsTo(Website::class);
+    }
+
+    // Relationships with Post model
+    public function lastSeenPost():BelongsTo
+    {
+        return $this->belongsTo(Post::class, 'last_seen_post_id');
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('website_id');
+            $table->foreignId('last_seen_post_id')->nullable();
             $table->timestamps();
         });
     }
