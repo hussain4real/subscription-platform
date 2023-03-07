@@ -3,6 +3,7 @@ This API allows users to subscribe to websites and receive notifications about n
 
 **API Endpoints**:
 Base URL: `http://localhost:8080/api/`
+
 ***Create Post***: `POST /websites/{websiteId}/posts`
 
 Creates a new post for the website with the given ID.
