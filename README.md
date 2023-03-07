@@ -4,6 +4,7 @@ This API allows users to subscribe to websites and receive notifications about n
 **API Endpoints**:
 Base URL: `http://localhost:8080/api/`
 ***Create Post***: `POST /websites/{websiteId}/posts`
+
 Creates a new post for the website with the given ID.
 
 Request Parameters:
@@ -18,6 +19,7 @@ Response:
 - `404`: The website with the given ID was not found.
 
 ***Subscribe to Website***: `POST /websites/{websiteId}/subscription`
+
 Subscribes the user to the website with the given ID.
 
 Request Parameters:
