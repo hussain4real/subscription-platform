@@ -27,6 +27,7 @@ class SubscriptionController extends Controller
         ]);
 
 
+
         // Check if a user with the specified email already exists
         $user = User::where('email', $validatedData['email'])->first();
 
@@ -40,9 +41,14 @@ class SubscriptionController extends Controller
 
         }
 
+        //check if website does not exist
+        if (!$website) {
+            return response()->json(['message' => 'Website does not exist'], 404);
+        }
+
         // Check if user is already subscribed to this website
         if ($user->subscriptions()->where('website_id', $websiteId)->exists()) {
-            return response()->json(['message' => 'You are already subscribed to this website'], 400);
+            return response()->json(['message' => 'You are already subscribed to this website'], 409);
         }
 
         $subscription = new Subscription([
