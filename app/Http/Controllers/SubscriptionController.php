@@ -11,7 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class SubscriptionController extends Controller
 {
 
-
+    //get all subscriptions
+    public function index()
+    {
+        $subscriptions = Subscription::all();
+        return response()->json(["message"=>"subscriptions retrieved successfully",'subscriptions' => $subscriptions]);
+    }
 
 
     /**

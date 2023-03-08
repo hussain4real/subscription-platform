@@ -16,7 +16,7 @@ class PostController extends Controller
         //get all posts
         $posts = Post::all();
         //return a json response
-        return response()->json($posts);
+        return response()->json(["message"=>"posts retrieved successfully",'posts' => $posts]);
     }
 
 
